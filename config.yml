@@ -1,0 +1,9 @@
+default:
+  workbench:
+    username: !expr Sys.getenv("WORKBENCH_UID")
+    password: !expr Sys.getenv("WORKBENCH_PWD")
+  dap:
+    driver: !expr Sys.getenv("DAP_DRIVER")
+    uid: !expr Sys.getenv("DAP_UID")
+    pwd: !expr Sys.getenv("DAP_PWD")
+    servernode: !expr Sys.getenv("DAP_SERVER")

@@ -2,48 +2,23 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 # redbulltools
 
-The goal of redbulltools is to ...
+The redbulltools package provides helper and utility functions for Data Science teams at Red Bull. Most of these are simply wrappers around existing utilities and functions that should serve to improve speed, reproducibility and consistency.
 
-## Installation
+## Setting up
 
-You can install the released version of redbulltools from [CRAN](https://CRAN.R-project.org) with:
+To get everything working properly you will need to use the `config` package and your environment variables to store all sensitive credentials or connection information to your R environment.
 
-``` r
-install.packages("redbulltools")
+Templates for the `config.yml` file and `.Renviron` file are available in the templates folder of this package.
+
+## Functionality
+
+### Connecting to the DAP system
+
+Assuming you have your DAP credentials stored correctly using config and environment variables you can quickly connect to DAP using the following syntax.
+
+```{r eval=F}
+dap_connection <- connect_to_dap()
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
