@@ -15,7 +15,8 @@ Suggests:
     redbull,
     DBI,
     odbc,
-    config
+    config,
+    stringr
 Remotes: github::deathbydata/redbull,
     github::deathbydata/egnyter
 Roxygen: list(markdown = TRUE)

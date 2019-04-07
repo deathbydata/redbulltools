@@ -7,3 +7,5 @@ default:
     uid: !expr Sys.getenv("DAP_UID")
     pwd: !expr Sys.getenv("DAP_PWD")
     servernode: !expr Sys.getenv("DAP_SERVER")
+  bulldrive:
+    project_folder: !expr Sys.getenv("BULLDRIVE_PROJECT_FOLDER")
