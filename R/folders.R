@@ -13,7 +13,7 @@ create_project_folders <- function(project_name, where = config::get("bulldrive"
 
   project_folder = paste(where, project_name, sep = "/")
 
-  user_confirmation <- menu(c("Yes", "No"), title = "Are you sure you want to create the project folders under [", project_folder ,"]")
+  user_confirmation <- menu(c("Yes", "No"), title = "Are you sure you want to create a project folder structure under [", project_folder ,"]")
 
   if (user_confirmation == 1) {
     egnyter::create_folder(where, project_name)
