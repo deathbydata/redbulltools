@@ -3,7 +3,7 @@ Type: Package
 Title: Helper Functions for Red Bull Data Science
 Version: 0.1.0
 Author: Josh Muncke (josh.muncke@redbull.com)
-Maintainer: Josh Muncke (josh.muncke@redbull.com)
+Maintainer: Josh Muncke <josh.muncke@redbull.com>
 Description: This package contains a bunch of helper functions for doing
     Data Science project work at Red Bull.
 License: GPL-3
