@@ -24,7 +24,7 @@ dap_connection <- connect_to_dap()
 
 ### Creating a new project folder structure
 
-When starting a new project you can use the `create_project_folder` function to set up a [Cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) style directory structure in the Bulldrive. You need to have (<http://github.com/deathbydata/egnyter>) installed and the `BULLDRIVE_PROJECT_FOLDER` environment variable set for this function to work.
+When starting a new project you can use the `create_project_folder` function to set up a [Cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) style directory structure in the Bulldrive. You need to have [egnyter](http://github.com/deathbydata/egnyter) installed and the `BULLDRIVE_PROJECT_FOLDER` environment variable set for this function to work.
 
 ``` r
 create_project_folders("My Super Cool Project")
