@@ -1,7 +1,7 @@
 Package: redbulltools
 Type: Package
 Title: Helper Functions for Red Bull Data Science
-Version: 0.1.1
+Version: 0.1.2
 Author: Josh Muncke (josh.muncke@redbull.com)
 Maintainer: Josh Muncke <josh.muncke@redbull.com>
 Description: This package contains a bunch of helper functions for doing
@@ -16,9 +16,10 @@ Suggests:
     DBI,
     odbc,
     config,
-    stringr,
     utils
 Remotes: github::deathbydata/redbull,
     github::deathbydata/egnyter
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Imports: 
+    stringr
