@@ -8,4 +8,6 @@ default:
     pwd: !expr Sys.getenv("DAP_PWD")
     servernode: !expr Sys.getenv("DAP_SERVER")
   bulldrive:
+    domain: !expr Sys.getenv("EGNYTER_DOMAIN")
+    apikey: !expr Sys.getenv("EGNYTER_APIKEY")
     project_folder: !expr Sys.getenv("BULLDRIVE_PROJECT_FOLDER")

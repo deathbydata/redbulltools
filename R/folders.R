@@ -17,11 +17,17 @@ create_project_folders <- function(project_name, where = config::get("bulldrive"
 
   if (user_confirmation == 1) {
     egnyter::create_folder(where, project_name)
+    Sys.sleep(0.75) # Max 2 API calls per second
     egnyter::create_folder(project_folder, "1-input")
+    Sys.sleep(0.75)
     egnyter::create_folder(project_folder, "2-data")
+    Sys.sleep(0.75)
     egnyter::create_folder(project_folder, "3-analysis")
+    Sys.sleep(0.75)
     egnyter::create_folder(project_folder, "4-output")
+    Sys.sleep(0.75)
     egnyter::create_folder(project_folder, "5-presentations")
+    Sys.sleep(0.75)
     egnyter::create_folder(project_folder, "9-admin")
   }
 }
