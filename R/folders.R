@@ -7,6 +7,7 @@
 #' @param project_name The name of the project (folder)
 #'
 #' @export
+#' @importFrom magrittr %>%
 create_project_folders <- function(project_name, where = config::get("bulldrive")$project_folder) {
   # Convert lower cases, strip punctuation, swap spaces for hyphens
   project_name <- project_name %>% stringr::str_replace_all("[[:punct:]]","") %>% stringr::str_to_lower() %>% stringr::str_replace_all(" ", "-")

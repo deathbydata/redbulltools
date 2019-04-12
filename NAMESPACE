@@ -3,3 +3,4 @@
 export(connect_to_bulldrive)
 export(connect_to_dap)
 export(create_project_folders)
+importFrom(magrittr,"%>%")

@@ -22,4 +22,5 @@ Remotes: github::deathbydata/redbull,
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
-    stringr
+    stringr,
+    magrittr
