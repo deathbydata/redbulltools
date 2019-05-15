@@ -11,3 +11,9 @@ default:
     domain: !expr Sys.getenv("EGNYTER_DOMAIN")
     apikey: !expr Sys.getenv("EGNYTER_APIKEY")
     project_folder: !expr Sys.getenv("BULLDRIVE_PROJECT_FOLDER")
+  ods:
+    driver: !expr Sys.getenv("ODS_DRIVER")
+    uid: !expr Sys.getenv("ODS_UID")
+    pwd: !expr Sys.getenv("ODS_PWD")
+    server: !expr Sys.getenv("ODS_SERVER")
+    port: !expr Sys.getenv("ODS_PORT")
