@@ -22,6 +22,20 @@ Assuming you have your DAP credentials stored correctly using config and environ
 dap_connection <- connect_to_dap()
 ```
 
+### Connecting to other systems
+
+Quick connect functions currently exist for the following additional database environments:
+
+* ODS
+* GIS
+* InsightsNow Logging (Prod Environment)
+
+```{r eval=F}
+ods_connection <- connect_to_ods()
+gis_connection <- connect_to_gis()
+insightsnowlogging_connection <- connect_to_insightsnowlogging()
+```
+
 ### Connecting to the Bulldrive
 
 Assuming you have your Bulldrive credentials stored correctly using config and environment variables you can quickly save your token to your local options using the following syntax.
