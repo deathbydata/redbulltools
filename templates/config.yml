@@ -17,3 +17,15 @@ default:
     pwd: !expr Sys.getenv("ODS_PWD")
     server: !expr Sys.getenv("ODS_SERVER")
     port: !expr Sys.getenv("ODS_PORT")
+  gis:
+    driver: !expr Sys.getenv("GIS_DRIVER")
+    uid: !expr Sys.getenv("GIS_UID")
+    pwd: !expr Sys.getenv("GIS_PWD")
+    server: !expr Sys.getenv("GIS_SERVER")
+    port: !expr Sys.getenv("GIS_PORT")
+  insightsnowlogging:
+    driver: !expr Sys.getenv("INSIGHTSNOWLOGGING_DRIVER")
+    uid: !expr Sys.getenv("INSIGHTSNOWLOGGING_UID")
+    pwd: !expr Sys.getenv("INSIGHTSNOWLOGGING_PWD")
+    server: !expr Sys.getenv("INSIGHTSNOWLOGGING_SERVER")
+    port: !expr Sys.getenv("INSIGHTSNOWLOGGING_PORT")
