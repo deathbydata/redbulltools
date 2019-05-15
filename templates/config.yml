@@ -29,3 +29,4 @@ default:
     pwd: !expr Sys.getenv("INSIGHTSNOWLOGGING_PWD")
     server: !expr Sys.getenv("INSIGHTSNOWLOGGING_SERVER")
     port: !expr Sys.getenv("INSIGHTSNOWLOGGING_PORT")
+    database: !expr Sys.getenv("INSIGHTSNOWLOGGING_DATABASE")
