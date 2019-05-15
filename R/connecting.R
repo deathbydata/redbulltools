@@ -58,7 +58,8 @@ connect_to_insightsnowlogging <- function() {
                  UID = config::get("insightsnowlogging")$uid,
                  PWD = config::get("insightsnowlogging")$pwd,
                  Server = config::get("insightsnowlogging")$server,
-                 Port = config::get("insightsnowlogging")$port)
+                 Port = config::get("insightsnowlogging")$port,
+                 Database = config::get("insightsnowlogging")$database)
 }
 
 #' Quick-connect to the Bulldrive system
