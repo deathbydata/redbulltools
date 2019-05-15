@@ -26,7 +26,7 @@ connect_to_gis <- function() {
                  UID = config::get("gis")$uid,
                  PWD = config::get("gis")$pwd,
                  Server = config::get("gis")$server,
-                 Port = Server = config::get("gis")$port)
+                 Port = config::get("gis")$port)
 }
 
 #' Quick-connect to the ODS system
@@ -42,7 +42,7 @@ connect_to_ods <- function() {
                  UID = config::get("ods")$uid,
                  PWD = config::get("ods")$pwd,
                  Server = config::get("ods")$server,
-                 Port = Server = config::get("ods")$port)
+                 Port = config::get("ods")$port)
 }
 
 #' Quick-connect to the InsightsNow Logging system
@@ -58,7 +58,7 @@ connect_to_insightsnowlogging <- function() {
                  UID = config::get("insightsnowlogging")$uid,
                  PWD = config::get("insightsnowlogging")$pwd,
                  Server = config::get("insightsnowlogging")$server,
-                 Port = Server = config::get("insightsnowlogging")$port)
+                 Port = config::get("insightsnowlogging")$port)
 }
 
 #' Quick-connect to the Bulldrive system
