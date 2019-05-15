@@ -23,6 +23,7 @@ default:
     pwd: !expr Sys.getenv("GIS_PWD")
     server: !expr Sys.getenv("GIS_SERVER")
     port: !expr Sys.getenv("GIS_PORT")
+    database: !expr Sys.getenv("GIS_DATABASE")
   insightsnowlogging:
     driver: !expr Sys.getenv("INSIGHTSNOWLOGGING_DRIVER")
     uid: !expr Sys.getenv("INSIGHTSNOWLOGGING_UID")

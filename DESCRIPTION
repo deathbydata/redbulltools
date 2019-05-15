@@ -1,7 +1,7 @@
 Package: redbulltools
 Type: Package
 Title: Helper Functions for Red Bull Data Science
-Version: 0.1.5
+Version: 0.1.6
 Author: Josh Muncke (josh.muncke@redbull.com)
 Maintainer: Josh Muncke <josh.muncke@redbull.com>
 Description: This package contains a bunch of helper functions for doing
