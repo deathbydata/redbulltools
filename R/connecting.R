@@ -26,7 +26,8 @@ connect_to_gis <- function() {
                  UID = config::get("gis")$uid,
                  PWD = config::get("gis")$pwd,
                  Server = config::get("gis")$server,
-                 Port = config::get("gis")$port)
+                 Port = config::get("gis")$port,
+                 Database = config::get("gis")$database)
 }
 
 #' Quick-connect to the ODS system
