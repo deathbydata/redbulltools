@@ -1,4 +1,4 @@
-#' Quick-connect to the DAP system
+#' Quick-connect to the DAP system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -6,6 +6,8 @@
 #'
 #' @export
 connect_to_dap <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("dap")$driver,
                  UID = config::get("dap")$uid,
@@ -13,7 +15,7 @@ connect_to_dap <- function() {
                  Servernode = config::get("dap")$servernode)
 }
 
-#' Quick-connect to the GIS system
+#' Quick-connect to the GIS system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -21,6 +23,8 @@ connect_to_dap <- function() {
 #'
 #' @export
 connect_to_gis <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("gis")$driver,
                  UID = config::get("gis")$uid,
@@ -30,7 +34,7 @@ connect_to_gis <- function() {
                  Database = config::get("gis")$database)
 }
 
-#' Quick-connect to the ODS system
+#' Quick-connect to the ODS system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -38,6 +42,8 @@ connect_to_gis <- function() {
 #'
 #' @export
 connect_to_ods <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("ods")$driver,
                  UID = config::get("ods")$uid,
@@ -46,7 +52,7 @@ connect_to_ods <- function() {
                  Port = config::get("ods")$port)
 }
 
-#' Quick-connect to the InsightsNow Logging system
+#' Quick-connect to the InsightsNow Logging system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -54,6 +60,8 @@ connect_to_ods <- function() {
 #'
 #' @export
 connect_to_insightsnowlogging <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("insightsnowlogging")$driver,
                  UID = config::get("insightsnowlogging")$uid,
@@ -63,16 +71,33 @@ connect_to_insightsnowlogging <- function() {
                  Database = config::get("insightsnowlogging")$database)
 }
 
-#' Quick-connect to the Bulldrive system
+#' Quick-connect to an internal database using DBI
 #'
-#' This function is a wrapper around the egnyter::set_token
+#' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
 #' and environment variables set up.
 #'
+#' @param db_name The name of the database connection (must match config.yml)
+#' @param ... Other arguments passed to dbConnect (such as 'DB')
+#'
 #' @export
-connect_to_bulldrive <- function() {
-  egnyter::set_token(domain = config::get("bulldrive")$domain,
-                     app_key = config::get("bulldrive")$apikey,
-                     username = config::get("workbench")$username,
-                     password = config::get("workbench")$password)
+connect_to_database <- function(db_name, ...) {
+  # Check if database config exists in the config.yml file
+  if(is.null(config::get(db_name))) {
+    stop(paste0("No config variables available for database: ", db_name), call. = F)
+  }
+
+  # Pull credentials from config vars
+  db_credentials <- config::get(db_name)
+
+  # Need to rename config vars - title/upper case required depending on variable
+  names(db_credentials) <- ifelse(names(db_credentials) %in% c('uid','pwd','db'),
+                                  stringr::str_to_upper(names(db_credentials)),
+                                  stringr::str_to_title(names(db_credentials)))
+
+  # Group the arguments into a single object including odbc driver and ...
+  arg.list = c(odbc::odbc(), db_credentials, ...)
+
+  # Splice arguments into dbConnect and return this object
+  do.call(DBI::dbConnect, arg.list)
 }

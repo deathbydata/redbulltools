@@ -17,31 +17,40 @@ in the templates folder of this package.
 
 ## Functionality
 
-### Connecting to the DAP system
+### Connecting to internal databases
 
-Assuming you have your DAP credentials stored correctly using config and
-environment variables you can quickly connect to DAP using the following
-syntax.
+The `connect_to_database` function is a wrapper around `DBI::dbConnect`
+that allows you to reference connection parameters that are saved in
+your configuration variables.
+
+To use this function, firstly make sure you have your database
+connection parameters stored in your `.Renviron` file and that your
+`config.yml` file is set up as in the template (in this repository):
 
 ``` r
-dap_connection <- connect_to_dap()
+  my_new_database:
+    driver: !expr Sys.getenv("NEW_DB_DRIVER")
+    uid: !expr Sys.getenv("NEW_DB_UID")
+    pwd: !expr Sys.getenv("NEW_DB_PWD")
+    server: !expr Sys.getenv("NEW_DB_SERVER")
+    port: !expr Sys.getenv("NEW_DB_PORT")
 ```
 
-### Connecting to other systems
+Note that the config variable is the name of the database
+(“my\_new\_database”) and the sub-variables are all lower-case.
 
-Quick connect functions currently exist for the following additional
-database environments:
-
-  - ODS
-  - GIS
-  - InsightsNow Logging (Prod Environment)
-
-<!-- end list -->
+To connect to this database you can simply reference it by name.
 
 ``` r
-ods_connection <- connect_to_ods()
-gis_connection <- connect_to_gis()
-insightsnowlogging_connection <- connect_to_insightsnowlogging()
+new_db_connection <- connect_to_database("my_new_database")
+```
+
+This function can also pass additional variables to
+dbConnect.
+
+``` r
+# If we want to connect to a specific DB within the my_new_database environment (e.g. SQL)
+new_db_connection_2 <- connect_to_database("my_new_database", DB = "THISDB")
 ```
 
 ### Connecting to the Bulldrive
