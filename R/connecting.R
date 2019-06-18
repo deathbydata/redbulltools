@@ -1,4 +1,4 @@
-#' Quick-connect to the DAP system
+#' Quick-connect to the DAP system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -6,6 +6,8 @@
 #'
 #' @export
 connect_to_dap <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("dap")$driver,
                  UID = config::get("dap")$uid,
@@ -13,7 +15,7 @@ connect_to_dap <- function() {
                  Servernode = config::get("dap")$servernode)
 }
 
-#' Quick-connect to the GIS system
+#' Quick-connect to the GIS system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -21,6 +23,8 @@ connect_to_dap <- function() {
 #'
 #' @export
 connect_to_gis <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("gis")$driver,
                  UID = config::get("gis")$uid,
@@ -30,7 +34,7 @@ connect_to_gis <- function() {
                  Database = config::get("gis")$database)
 }
 
-#' Quick-connect to the ODS system
+#' Quick-connect to the ODS system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -38,14 +42,17 @@ connect_to_gis <- function() {
 #'
 #' @export
 connect_to_ods <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("ods")$driver,
                  UID = config::get("ods")$uid,
                  PWD = config::get("ods")$pwd,
                  Server = config::get("ods")$server,
                  Port = config::get("ods")$port)
-2
-#' Quick-connect to the InsightsNow Logging system
+}
+
+#' Quick-connect to the InsightsNow Logging system (deprecated)
 #'
 #' This function is a wrapper around the DBI::dbConnect
 #' function and presumes you have appropriate config
@@ -53,6 +60,8 @@ connect_to_ods <- function() {
 #'
 #' @export
 connect_to_insightsnowlogging <- function() {
+  .Deprecated("connect_to_database")
+
   DBI::dbConnect(odbc::odbc(),
                  Driver = config::get("insightsnowlogging")$driver,
                  UID = config::get("insightsnowlogging")$uid,
