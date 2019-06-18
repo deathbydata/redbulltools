@@ -2,7 +2,7 @@
 % Please edit documentation in R/connecting.R
 \name{connect_to_ods}
 \alias{connect_to_ods}
-\title{Quick-connect to the ODS system}
+\title{Quick-connect to the ODS system (deprecated)}
 \usage{
 connect_to_ods()
 }

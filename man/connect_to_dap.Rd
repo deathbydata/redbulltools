@@ -2,7 +2,7 @@
 % Please edit documentation in R/connecting.R
 \name{connect_to_dap}
 \alias{connect_to_dap}
-\title{Quick-connect to the DAP system}
+\title{Quick-connect to the DAP system (deprecated)}
 \usage{
 connect_to_dap()
 }

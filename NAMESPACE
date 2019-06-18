@@ -3,6 +3,7 @@
 export("%>%")
 export(connect_to_bulldrive)
 export(connect_to_dap)
+export(connect_to_database)
 export(connect_to_gis)
 export(connect_to_insightsnowlogging)
 export(connect_to_ods)

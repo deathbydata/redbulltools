@@ -2,7 +2,7 @@
 % Please edit documentation in R/connecting.R
 \name{connect_to_gis}
 \alias{connect_to_gis}
-\title{Quick-connect to the GIS system}
+\title{Quick-connect to the GIS system (deprecated)}
 \usage{
 connect_to_gis()
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connecting.R
 \name{connect_to_insightsnowlogging}
 \alias{connect_to_insightsnowlogging}
-\title{Quick-connect to the InsightsNow Logging system}
+\title{Quick-connect to the InsightsNow Logging system (deprecated)}
 \usage{
 connect_to_insightsnowlogging()
 }
