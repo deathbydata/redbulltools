@@ -25,4 +25,5 @@ Imports:
     odbc,
     egnyter,
     config,
-    dplyr
+    dplyr,
+    purrr
