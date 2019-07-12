@@ -24,4 +24,5 @@ Imports:
     dbplyr,
     odbc,
     egnyter,
-    config
+    config,
+    dplyr
